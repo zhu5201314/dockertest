@@ -25,5 +25,8 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       shell: bash
       
+    - name: Build fix
+      run: docker build -t registry-windows:2.7.1-1809 -f Dockerfile2 .
+      
     - name: Publish to GPR
       run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:v1"
