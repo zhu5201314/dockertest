@@ -23,6 +23,6 @@ jobs:
       run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
       env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
+          GITHUB_ACTOR: ${{GITHUB_ACTOR}}
     - name: Publish to GPR
       run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:v1"
