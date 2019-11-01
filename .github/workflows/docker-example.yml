@@ -11,13 +11,13 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v1
 
     - name: Build and tag image
-      run: docker build -t "docker.pkg.github.com/zhuorg/dockertest/docker-example:$GITHUB_SHA" -f docker-example/Dockerfile .
+      run: docker build -t "docker.pkg.github.com/zhuorg/dockertest/docker-example:v1" -f Dockerfile .
 
     - name: Docker login
       run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
@@ -25,4 +25,4 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
     - name: Publish to GPR
-      run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-example:$GITHUB_SHA"
+      run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-example:v1"
