@@ -1,10 +1,11 @@
+name: push docker image
 on: 
   push: 
     branches: 
     - master
     paths: 
     - 'docker-example/*' 
-    - '.github/workflows/docker-example.yml' 
+    - '.github/workflows/dockerUbuntu.yml' 
 jobs: 
   build: 
     runs-on: ubuntu-latest 
