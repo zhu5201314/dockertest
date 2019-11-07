@@ -19,6 +19,13 @@ jobs:
   build: 
 
     runs-on: windows-2019
+    strategy:
+      matrix:
+        # Needs to match python version of images (see windows-docker-image.yaml)
+        python-version:
+          - '2.7.17'
+          - '3.6.8'
+          - '3.7.5'
 
     steps: 
 
@@ -35,3 +42,6 @@ jobs:
       env: 
 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
+    - name: matrix
+      run: echo ${{ matrix.python-version }}
+      shell: bash
