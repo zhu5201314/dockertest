@@ -1,0 +1,34 @@
+name: login docker hub
+
+on: 
+
+  push: 
+
+    branches: 
+
+    - master
+
+    paths: 
+
+    - 'docker-example/*' 
+
+    - '.github/workflows/dockerlogin.yml' 
+
+jobs: 
+
+  build: 
+
+    runs-on: ubuntu-latest 
+
+    steps: 
+
+    
+    - name: login docker hub 
+
+      run: |
+       ${gh_user} = ("${{ github.repository }}" -Split '/')[0]
+       echo ${gh_user}
+       docker login -u ${gh_user} -p ${{ secrets.DOCKERHUB_TOKEN }}  
+      env: 
+
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
