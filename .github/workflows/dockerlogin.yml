@@ -26,9 +26,9 @@ jobs:
     - name: login docker hub 
 
       run: |
-       ${gh_user} = ("${{ github.repository }}" -Split '/')[0]
-       echo ${gh_user}
-       docker login -u ${gh_user} -p ${{ secrets.DOCKERHUB_TOKEN }}  
+       $gh_user = ("${{ github.repository }}" -Split '/')[0]
+       echo $gh_user
+       docker login -u $gh_user -p ${{ secrets.DOCKERHUB_TOKEN }}  
       env: 
 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
