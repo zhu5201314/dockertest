@@ -28,7 +28,8 @@ jobs:
       run: |
        ${gh_user} = ("${{ github.repository }}" -Split '/')[0]
        write-host ${gh_user}
-       docker login -u ${gh_user} -p ${{ secrets.DOCKERHUB_TOKEN }}  
+       $user = 'yanjingzhu'
+       docker login -u $user --password-stdin ${{ secrets.DOCKERHUB_TOKEN }}  
       env: 
 
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}} 
