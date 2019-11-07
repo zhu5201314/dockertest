@@ -1,18 +1,8 @@
 name: login docker hub
 
-on: 
+on: pull_request
 
-  push: 
-
-    branches: 
-
-    - master
-
-    paths: 
-
-    - 'docker-example/*' 
-
-    - '.github/workflows/dockerlogin.yml' 
+   
 
 jobs: 
 
