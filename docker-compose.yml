@@ -1,6 +1,7 @@
 version: "3.7"
 services:
   web:
+    image: careapp/webapp-admin
     container_name: backend
     build: .
     depends_on:
