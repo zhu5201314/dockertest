@@ -2,7 +2,7 @@ version: "3.7"
 services:
   web:
     container_name: backend
-    build: './source/stockerize'
+    build: .
     depends_on:
       - db
 
