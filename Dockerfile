@@ -25,4 +25,5 @@ MAINTAINER Andrew Odewahn "odewahn@oreilly.com"
 
 
 WORKDIR /home
+CMD tail -f /dev/null
 
