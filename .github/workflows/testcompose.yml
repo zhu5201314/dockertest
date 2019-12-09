@@ -6,12 +6,11 @@ jobs:
 
  build:
 
-  runs-on: windows-latest
-  container: 
-    image: ubuntu:19.04
-   
+  runs-on: windows-latest   
 
   steps:
+  - run: |
+      & $Env:ProgramFiles\Docker\Docker\DockerCli.exe -SwitchDaemon
   - uses: actions/checkout@v1
   - name: Build the docker-compose stack
     run: docker-compose up -d
