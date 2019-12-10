@@ -1,0 +1,9 @@
+name: test docker version
+on: push 
+jobs: 
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - run: docker --version
+    - name: Docker buildx version
+      run: export DOCKER_CLI_EXPERIMENTAL=enabled && docker buildx version
