@@ -14,7 +14,6 @@ jobs:
      # - name: Docker buildx version
      #   run: docker buildx version
      - run: |
-         export DOCKER_BUILDKIT=1
-         docker build --platform=local -o . git://github.com/docker/buildx
+         export DOCKER_CLI_EXPERIMENTAL=enabled
      - run: docker buildx version
             
