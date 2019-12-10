@@ -13,8 +13,9 @@ jobs:
      #   run: echo ${{ steps.buildx.outputs.platforms }}
      # - name: Docker buildx version
      #   run: docker buildx version
+        # export DOCKER_CLI_EXPERIMENTAL=enabled
+           # chmod a+x /usr/bin/buildx
      - run: |
-           export DOCKER_CLI_EXPERIMENTAL=enabled
-           chmod a+x /usr/bin/buildx 
-     - run: docker buildx version
+        sudo apt-get install libsndfile1-dev
+    # - run: docker buildx version
             
