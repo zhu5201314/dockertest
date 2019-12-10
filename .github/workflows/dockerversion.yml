@@ -4,10 +4,13 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-    - run: docker --version
-    - name: Docker buildx version
-      run: export DOCKER_CLI_EXPERIMENTAL=enabled 
-    - name: find buildx
-      run: |
-        ls ~/docker/cli-plugins
+      - name: Set up Docker Buildx
+        id: buildx
+        uses: crazy-max/ghaction-docker-buildx@v1
+        with:
+          version: latest
+      - name: Available platforms
+        run: echo ${{ steps.buildx.outputs.platforms }}
+      - name: Docker buildx version
+        run: docker buildx version
             
