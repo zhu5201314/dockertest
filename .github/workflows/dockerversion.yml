@@ -6,4 +6,8 @@ jobs:
     steps:
     - run: docker --version
     - name: Docker buildx version
-      run: export DOCKER_CLI_EXPERIMENTAL=enabled && docker buildx version
+      run: export DOCKER_CLI_EXPERIMENTAL=enabled 
+    - name: find buildx
+      run: |
+        chmod a+x ~/.docker/cli-plugins/docker-buildx
+        docker buildx version
