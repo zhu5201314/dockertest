@@ -15,6 +15,6 @@ jobs:
      #   run: docker buildx version
      - run: |
            export DOCKER_CLI_EXPERIMENTAL=enabled
-           chmod a+x /usr/bin/.docker/cli-plugins/docker-buildx 
+           chmod a+x /usr/bin/buildx 
      - run: docker buildx version
             
