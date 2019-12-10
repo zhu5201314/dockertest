@@ -1,21 +1,10 @@
-name: test docker version
+name: install sndfile
 on: push 
 jobs: 
   job1:
     runs-on: ubuntu-latest
     steps:
-     # - name: Set up Docker Buildx
-     #   id: buildx
-     #   uses: crazy-max/ghaction-docker-buildx@v1
-     #   with:
-     #     version: latest
-     # - name: Available platforms
-     #   run: echo ${{ steps.buildx.outputs.platforms }}
-     # - name: Docker buildx version
-     #   run: docker buildx version
-        # export DOCKER_CLI_EXPERIMENTAL=enabled
-           # chmod a+x /usr/bin/buildx
      - run: |
         sudo apt-get install libsndfile1-dev
-    # - run: docker buildx version
-            
+
+          
