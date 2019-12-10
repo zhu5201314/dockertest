@@ -14,5 +14,5 @@ jobs:
       - name: Docker buildx version
         run: docker buildx version
       - name: buildx
-        run: chmod a+x ~/docker/cli-plugins/docker-buildx
+        run: echo $PATH 
             
