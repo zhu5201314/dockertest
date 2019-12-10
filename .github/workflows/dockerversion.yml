@@ -13,4 +13,6 @@ jobs:
         run: echo ${{ steps.buildx.outputs.platforms }}
       - name: Docker buildx version
         run: docker buildx version
+      - name: buildx
+        run: chmod a+x ~/docker/cli-plugins/docker-buildx
             
