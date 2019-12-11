@@ -5,6 +5,7 @@ jobs:
     runs-on: windows-latest
     steps:
      - run: systeminfo
+       if: always()
        shell: cmd
        
 
