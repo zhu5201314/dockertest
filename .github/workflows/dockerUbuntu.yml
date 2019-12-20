@@ -12,13 +12,14 @@ jobs:
     steps: 
     - uses: actions/checkout@v1 
     - run: |
-        echo $github_ref   
-        home_mf="${github_ref////-}"
-        echo $home_mf
+   
+        ref="${github_ref////-}"
+        echo $ref
+        echo "::set-env name=ref::$ref"
       env:
         github_ref: ${{ github.ref }}
     - name: Build and tag image 
-      run: docker build -t "docker.pkg.github.com/zhu5201314/learnactions/docker-learn:$github_ref" -f docker-example/Dockerfile .
+      run: docker build -t "docker.pkg.github.com/zhu5201314/learnactions/docker-learn:$ref" -f docker-example/Dockerfile .
    # - name: Docker login 
    #   run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN 
    #   env: 
