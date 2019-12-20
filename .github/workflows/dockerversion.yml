@@ -1,5 +1,6 @@
 name: install sndfile
-on: push 
+on: check_run
+ 
 jobs: 
   job1:
     runs-on: windows-latest
