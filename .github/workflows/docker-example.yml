@@ -25,13 +25,9 @@ jobs:
       env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
       shell: bash
-      
-    - name: Build fix
-      run: docker build -t registry-windows:2.7.1-1809 -f Dockerfile2 .
-      shell: bash
-      
+            
     - name: Publish to GPR
-      run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:v1"
+      run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:v2"
       shell: bash
   pull:  
     needs: push
