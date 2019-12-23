@@ -34,6 +34,7 @@ jobs:
       run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:v1"
       shell: bash
   pull:  
+    needs: push
     runs-on: windows-latest
     steps:
     - run: |
