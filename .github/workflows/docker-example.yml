@@ -29,8 +29,10 @@ jobs:
       shell: bash
             
     - name: Publish to GPR
-      run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:v2"
+      run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:$TAG"
       shell: bash
+      env: 
+        TAG: ${{ matrix.PHP }}
   pull:  
     needs: push
     runs-on: ubuntu-latest
