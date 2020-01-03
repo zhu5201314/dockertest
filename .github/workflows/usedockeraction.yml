@@ -1,0 +1,12 @@
+
+name: use docker action
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - uses: zhu5201314/DockerContainer_action
+      with:
+        who-to-greet: jingzhu
