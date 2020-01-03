@@ -7,6 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - uses: zhu5201314/DockerContainer_action
+    - uses: zhu5201314/DockerContainer_action@master
       with:
         who-to-greet: jingzhu
