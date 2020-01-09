@@ -11,9 +11,7 @@ on:
 
 jobs:
   push:
-    strategy:
-      matrix: 
-        PHP: [5.2, 5.6]
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +19,7 @@ jobs:
     - name: Build and tag image
       run: docker build -t "docker.pkg.github.com/zhuorg/dockertest/docker-windows:$TAG" -f Dockerfile .
       env: 
-        TAG: ${{ matrix.PHP }}
+        TAG: '6.0'
     - name: Docker login
       run: docker login docker.pkg.github.com -u $GITHUB_ACTOR -p $GITHUB_TOKEN
       env:
@@ -32,7 +30,7 @@ jobs:
       run: docker push "docker.pkg.github.com/zhuorg/dockertest/docker-windows:$TAG"
       shell: bash
       env: 
-        TAG: ${{ matrix.PHP }}
+        TAG: '6.0'
   pull:  
     needs: push
     runs-on: ubuntu-latest
